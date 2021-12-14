@@ -5,13 +5,13 @@ class PagesController < ApplicationController
 
   def home
     if params[:ticker] == ""
-      @blankSearch = "Please enter stock abbrv"
+      @blankSearch = "Please enter stock code"
     elsif params[:ticker]
-      StockQuote::Stock.new(api_key: Rails.application.credentials.config[:stocks_api_key] )
-      @stock = StockQuote::Stock.quote(params[:ticker])
-      # if user entered random codes, UNDER CONSTRUCTION
-      if !@stock
-        @stockErr = "This stock doesnt exist"
+      begin
+        StockQuote::Stock.new(api_key: Rails.application.credentials.config[:stocks_api_key] )
+        @stock = StockQuote::Stock.quote(params[:ticker])
+      rescue RuntimeError
+        @stockErr = "This stock doesn't exist"
       end
 
     end
