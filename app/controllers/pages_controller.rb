@@ -6,18 +6,15 @@ class PagesController < ApplicationController
   def home
     if params[:ticker] == ""
       @blankSearch = "Please enter stock code"
-    elsif params[:ticker]
-      begin
-        StockQuote::Stock.new(api_key: Rails.application.credentials.config[:stocks_api_key] )
-        @stock = StockQuote::Stock.quote(params[:ticker])
-      rescue RuntimeError
-        @stockErr = "This stock doesn't exist"
-      end
-
+    else params[:ticker]
+      @stock = Stock.new
+      @stock = @stock.render_stock(params[:ticker])
     end
    
   end
   
   private
+
+
 
 end
