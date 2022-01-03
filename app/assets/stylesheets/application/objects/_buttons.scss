@@ -1,6 +1,7 @@
 //Variables
 @import './variables';
 @import '../../base/mixins/mixins';
+@import '../../application/responsive/responsive.scss';
 
 
 
@@ -19,6 +20,11 @@
   outline: none;
   border: none;
   cursor: pointer;
+
+  @include respond-to('medium') {
+    padding: 10px 30px;
+    font-size: 0.8em;
+  }
 }
 
 .register-btn { 
