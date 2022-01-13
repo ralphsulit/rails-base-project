@@ -24,10 +24,11 @@ module Seeders
                     current_price: client.price(data), 
                     logo_url: client.logo(data).url
                 })
-                rescue StandardError
-                    nil
+                rescue  => e
+                    @logger.info "#{e.message}"
+                else
+                    @logger.info "#{data} market info added"
                 end
-                @logger.info "#{data} market info added"
             end
             @logger.info 'Stock data initialized'
         end
