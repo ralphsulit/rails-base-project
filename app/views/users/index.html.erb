@@ -8,6 +8,9 @@
 <h3>Balance</h3>
 </div>
 
+<% if @holdings.empty? %>
+    <h2>No Transaction logs available </h2>
+<% else %>
 <div>
 <table>
     <thead>
@@ -33,7 +36,9 @@
             <td><%= profit_or_loss(holding)[:profit_or_loss_gross]%></td>
             <td><%= link_to "View", new_user_holding_path(user_id:current_user, stock_id:holding.stock_id)%></td>
         </tr>
+    <% end %>
     </tbody>
-
 <% end %>
+
+
 

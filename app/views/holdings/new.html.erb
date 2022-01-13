@@ -4,10 +4,40 @@
 </div>
 <div>
 <h3><%= @current_stock.nil? ? 0.00 : @current_stock.units %></h3>
-<h3>Stocks</h3>
+<h3>Current held stocks</h3>
 </div>
 
+
+<div>
+<h2>Stock Information</h2>
+<h3>Company Name:</h3>
 <p><%= @stock.name %></p>
+
+<div>
+<h3>Headquarters:</h3>
+<p><%= @stock_profile["country"]%></p>
+</div>
+
+<div>
+<h3>Founded:</h3>
+<p><%= @stock_profile["ipo"]%></p>
+</div>
+
+<div>
+<h3>Exchange:</h3>
+<p><%= @stock_profile["exchange"]%></p>
+</div>
+
+<div>
+<h3>Industry type:</h3>
+<p><%= @stock_profile["finnhubIndustry"]%></p>
+</div>
+
+<div>
+<h3><%= link_to "#{@stock.name} Official website", @stock_profile["weburl"]%></h3>
+</div>
+</div>
+
 <div>
 <h2><%= number_to_currency(@buy_value, unit: "PHP ") %></h2>
 <h3>BUY</h3>
@@ -49,3 +79,23 @@
     </div>
     </div>
 
+<div>
+<h2>Latest news:</h2>
+<% if @stock_news.empty? %>
+    <h4>No news update since yesterday</h4>
+<% else %>
+<% @stock_news.each do |news|%>
+    <div>
+    <h3>Headline:</h3>
+    <p><%= link_to "#{news["headline"]}", news["url"]%></p>
+    </div>
+    <p><%= news["source"]%> : <%= Time.at(news["datetime"]).to_date %></p>
+    <div>
+    Summary:
+    <p><%= news["summary"]%></p>
+    </div>
+<%end%>
+<%end%>
+
+
+</div>

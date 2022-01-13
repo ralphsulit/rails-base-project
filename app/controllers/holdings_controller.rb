@@ -3,6 +3,8 @@ class HoldingsController < ApplicationController
 
     def new
         @stock = Stock.find(params[:stock_id])
+        @stock_profile = Finnhub::Client.profile(params[:ticker])
+        @stock_news = Finnhub::Client.news(params[:ticker])
         @holding = current_user.holdings.build
         @wallet = current_user.wallet
         @buy_value = helpers.stock_total_value(true, @stock.current_price)
