@@ -15,9 +15,6 @@ Rails.application.routes.draw do
   root to: 'users#index', as: :authenticated_root
   end
 
-  
-  
-
   #Session routes
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'
