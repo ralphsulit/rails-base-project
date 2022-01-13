@@ -15,6 +15,7 @@ module BackgroundServices
     
             list.each do |data|
                 begin
+                    var = rand(0.9...1.5).round(5)
                     Stock.where("ticker = ?", data).update(current_price: client.price(data))
                 rescue => e
                     @logger.info "#{e.class} #{e.message}"
