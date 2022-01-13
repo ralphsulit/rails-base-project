@@ -4,7 +4,7 @@ require 'json'
 module Finnhub 
     class Request
         BASE_URL = 'https://finnhub.io/api/v1/'
-        API_KEY = 'c7ff3eaad3if3fodusgg'
+        API_KEY = Rails.application.credentials.config[:finnhub_key]
 
         def self.call(http_method:, endpoint:)
             result = RestClient::Request.execute(
