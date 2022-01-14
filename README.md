@@ -45,5 +45,5 @@ Ruby on rail trading app!
 * [@ralphsulit](https://github.com/ralphsulit)
 * [@TanTanMa](https://github.com/TanTanMa)
 
-<img width="1244" alt="InvestStonks_v0.1" src=https://user-images.githubusercontent.com/86232999/149548449-efe4259f-67b4-40c4-b72b-58579a3c2052.png">
+<img width="1244" alt="InvestStonks_v0.1" src="https://user-images.githubusercontent.com/86232999/149548449-efe4259f-67b4-40c4-b72b-58579a3c2052.png">
 
