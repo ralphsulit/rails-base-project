@@ -38,9 +38,10 @@ Rails.application.routes.draw do
   get '/admin/client_list/:id', to: 'admin#modify_user'
   get '/admin/client_list/:id/edit', to: 'admin#edit_user', as: :edit_user_profile
   get '/admin/log_book', to: 'admin#log_book'
-  end
-
   #render price updates
   mount Resque::Server.new, at: '/admin/jobs'
+  end
+
+  get "*path" => 'pages#error404'
 
 end
