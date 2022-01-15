@@ -1,3 +1,56 @@
+# Investonks
+
+Ruby on rails app on trading in the stock market
+
+## [Live demo version](https://inv3st0nks.herokuapp.com/)
+
+### Credentials
+#### User
+
+* Site: (https://inv3st0nks.herokuapp.com/users/sign_in)
+* Email: user@test.com
+* Password: UserTest123
+
+#### Admin (1 account)
+* Site: (https://inv3st0nks.herokuapp.com/admins/sign_in)
+* Email: admin@devops.com
+* Password: Admin123
+
+
+## Features
+### API
+#### [Finnhub Stock API](https://finnhub.io/)
+* Latest news about the stock market
+* Actual informations about the company
+
+#### [IEX Cloud](https://iexcloud.io/)
+* Stock prices from New York Stock Exchange
+
+### Dependencies
+```
+* Ruby 2.7.4
+* Rails 6.0.3.4
+* yarn 1.22.4
+* nodejs 12.18.3
+```
+
+## Version History
+
+
+* 0.1
+    * Initial Release
+
+
+
+## Authors
+
+Contributors names and contact info
+
+* [@ralphsulit](https://github.com/ralphsulit)
+* [@TanTanMa](https://github.com/TanTanMa)
+
+
+
 # Hi there 👋
 
 This repo serves as the main repo for our Rails Projects. 

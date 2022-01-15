@@ -15,6 +15,7 @@
           <li><%= link_to 'Log Book', admin_log_book_path, :class => 'nav-link'%></li>
           <li><%= link_to 'Client lists', admin_client_list_path, :class => 'nav-link' %></li>
           <li><%= link_to 'Pending clients', admin_confirmation_path, :class => 'nav-link' %></li>
+          <li><%= link_to 'Create user', admin_add_user_path, :class => 'nav-link' %></li>
           <li><%= link_to "Log out", destroy_admin_session_path, method: :delete, :class => 'nav-link' %> </li>
 
       <% else %>

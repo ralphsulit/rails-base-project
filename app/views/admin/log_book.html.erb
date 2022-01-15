@@ -3,7 +3,7 @@
 
 <% else %>
 
-<h1> Trade logs user </h1>
+<h1>Log book of all users</h1>
 
 <div>
 <table>
@@ -36,8 +36,3 @@
     </tbody>
 </table>
 </div>
-<%= link_to 'Client List', admin_client_list_path %>
-<%= link_to 'Pending clients', admin_confirmation_path %>
-<%= link_to 'Create user', admin_add_user_path %>
-
-<%= link_to 'Logout', destroy_admin_session_path, method: :delete %>
