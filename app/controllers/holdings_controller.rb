@@ -99,7 +99,7 @@ class HoldingsController < ApplicationController
     end
 
     def trade_logger_sell
-      TradeLog.create(user_id: current_user.id, transaction_type: params[:holding][:transaction_type], ticker: params[:holding][:ticker], log_stock_price: params[:holding][:log_price].to_f, amount: (params[:holding][:units].to_f * params[:holding][:log_price].to_f), units: params[:holding][:units].to_f, transaction_date: DateTime.now)
+      TradeLog.create(user_id: current_user.id, email: current_user.email, username: current_user.username, transaction_type: params[:holding][:transaction_type], ticker: params[:holding][:ticker], log_stock_price: params[:holding][:log_price].to_f, amount: (params[:holding][:units].to_f * params[:holding][:log_price].to_f), units: params[:holding][:units].to_f, transaction_date: DateTime.now)
     end
 end
 
