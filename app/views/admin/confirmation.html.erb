@@ -1,7 +1,7 @@
 <p> List of users for confirmation</p>
 <% if @users.blank? %>
     <h2> No accounts for confirmation </h2>
-<% end %>
+<% else %>
 
 
 <table>
@@ -24,7 +24,5 @@
     </tbody>
     <% end %>
 </table>
+<%end%>
 
-<%= link_to 'Log Book', admin_log_book_path%>
-<%= link_to 'Client List', admin_client_list_path %>
-<%= link_to 'Logout', destroy_admin_session_path, method: :delete %>

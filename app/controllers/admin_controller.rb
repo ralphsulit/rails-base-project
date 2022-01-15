@@ -13,7 +13,7 @@ class AdminController < ApplicationController
         @user.confirmed = params[:confirmed]
         @user.save
         if @user.save
-            redirect_to admin_user_settings_path,
+            redirect_to admin_client_list_path,
             notice: "User successfully confirmed"
         else 
             flash[:notice] = "User confirmation failed"
